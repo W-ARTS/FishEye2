@@ -46,11 +46,8 @@
     };
 
     //Evenement du clique photographers
-    photographersSection.addEventListener('click',()=>{
-        if () {
-            
-        }
-    });
+    
+    
     
     init();
     
