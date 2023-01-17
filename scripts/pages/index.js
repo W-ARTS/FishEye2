@@ -48,6 +48,5 @@
     //Evenement du clique photographers
     
     
-    
     init();
     
