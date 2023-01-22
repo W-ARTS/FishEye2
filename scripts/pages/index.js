@@ -4,9 +4,9 @@
         let photographers = []
         let response = await fetch('/data/photographers.json');
 
-        if (response.ok) { // if HTTP-status is 200-299
+        if (response.ok) {
             let data = await response.json();
-            photographers = [...data.photographers]
+            photographers = data.photographers;
         } else {
             alert("HTTP-Error: " + response.status);
         }
@@ -32,8 +32,12 @@
         displayData(photographers);
     };
 
+
     //Evenement du clique photographers
-    addEventListener
+    const photoUsers = document.getElementsByClassName('photographer_section')[0];
+    photoUsers.addEventListener('click', () =>{
+        window.location.href = "/photographer.html?id=243";
+    });
     
     
     init();

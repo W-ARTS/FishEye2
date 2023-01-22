@@ -49,6 +49,7 @@ h1 {
     width: 200px;
     border-radius: 50%;
     cursor: pointer;
+    transition: 2s;
 }
 
 .photographer_section article img:hover{
