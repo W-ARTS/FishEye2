@@ -28,7 +28,7 @@ init();
 function photographer_Datas(data) {
     const { name, city, country, tagline, price, portrait } = data;
 
-    const Users = `assets/photographers/${[0]}`;
+    const Users = `assets/photographers/${[0][name]}`;
 
     console.log(Users);
 
