@@ -1,7 +1,41 @@
-//Evenement du clique photographers
+async function getPhotographers() {
+    // Ceci est un exemple de données pour avoir un affichage de photographes de test dès le démarrage du projet, 
+    // mais il sera à remplacer avec une requête sur le fichier JSON en utilisant "fetch".
+    let photographers = []
+    let response = await fetch('/data/photographers.json');
 
-const photoUsers = document.getElementsByClassName('photographer_section')[0];
-photoUsers.addEventListener('click', () => {
-    window.location.href = "/photographer.html?id=243";
-});
+    if (response.ok) {
+        let data = await response.json();
+        photographers = data.photographers;
+    } else {
+        alert("HTTP-Error: " + response.status);
+    }
+    return ({
+        photographers: [...photographers]
+    })
+}
 
+async function init() {
+    // Récupère les datas des photographes
+    const { photographers } = await getPhotographers();
+    console.log(photographers);
+};
+
+init();
+
+function photographer_Datas(data) {
+    const { name, city, country, tagline, portrait } = data;
+
+    const Users = `assets/photographers/${portrait}`;
+
+    function getUserInfos() {
+        
+        const UsersName = document.getElementsByClassName('users_title')[0];
+        UsersName.textContent = name;
+        
+        return (Users);
+    }
+    return { name, Users, getUserInfos }
+}
+
+photographer_Datas();

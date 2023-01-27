@@ -8,7 +8,7 @@ async function getPhotographerMedias() {
     if (response.ok) {
         let data = await response.json();
         medias = data.media.filter(e => e.photographerId == id);
-        console.log(medias);
+        //console.log(medias);
     } else {
         alert("HTTP-Error: " + response.status);
     }
