@@ -21,10 +21,21 @@ async function init() {
     console.log(photographers);
 };
 
+async function displayData(photographers) {
+    const photographersSection = document.querySelector(".photographer_section");
+
+    photographers.forEach((photographer) => {
+        const photographerModel = photographerFactory(photographer);
+        const userCardDOM = photographerModel.getUserCardDOM();
+        photographersSection.appendChild(userCardDOM);
+    });
+};
+
 init();
 
+
 function photographer_Datas(data) {
-    const { name, city, country, tagline, portrait } = data;
+    const {name, city, country, tagline, portrait } = data;
 
     const Users = `assets/photographers/${portrait}`;
 
