@@ -74,3 +74,135 @@ form input {
     border: none;
     border-radius: 5px;
 }
+
+.cards-media-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-bottom: 10rem;
+}
+
+@media screen and (min-width: 42.5rem) {
+    .cards-media-container {
+        margin-top: 2rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        -webkit-animation: apparition 0.8s ease-in-out;
+        animation: apparition 0.8s ease-in-out;
+    }
+}
+
+.cards-media {
+    width: 95vw;
+    height: 19rem;
+    margin-top: 5rem;
+    color: #901c1c;
+    -webkit-animation: apparition-up 0.8s ease-in-out;
+    animation: apparition-up 0.8s ease-in-out;
+}
+
+@media screen and (min-width: 42.5rem) {
+    .cards-media {
+        width: 30rem;
+        margin: 3rem;
+    }
+}
+
+.cards-media-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    margin-top: 0.5rem;
+    padding: 1% 2%;
+    font-size: 1.5em;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.cards-media-footer .cards-media-title {
+    font-weight: 400;
+    font-size: 1.7rem;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 1rem;
+    text-overflow: ellipsis;
+}
+
+.cards-media-footer .header-like {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    position: relative;
+    left: 0;
+}
+
+.cards-media-footer .header-like .heart {
+    text-align: center;
+    color: #901c1c;
+    font-size: 2rem;
+}
+
+.cards-media-footer .header-like .compteur {
+    margin-right: 0.5rem;
+}
+
+.media-img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.6rem;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    transition: -webkit-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+    position: relative;
+}
+
+.media-img:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.cards-Img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.6rem;
+    position: relative;
+}
+
+.banner-btn,
+.btn-modal-mobile {
+    background-color: #901c1c;
+    color: white;
+    border: none;
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    border-radius: 0.6rem;
+    cursor: pointer;
+}
+
+.banner-btn:hover,
+.btn-modal-mobile:hover {
+    background-color: #db8876;
+    color: black;
+}
