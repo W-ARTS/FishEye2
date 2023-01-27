@@ -1,6 +1,5 @@
 async function getPhotographers() {
-    // Ceci est un exemple de données pour avoir un affichage de photographes de test dès le démarrage du projet, 
-    // mais il sera à remplacer avec une requête sur le fichier JSON en utilisant "fetch".
+  
     let photographers = []
     let response = await fetch('/data/photographers.json');
 
@@ -28,7 +27,7 @@ init();
 function photographer_Datas(data) {
     const { name, city, country, tagline, price, portrait } = data;
 
-    const Users = `assets/photographers/${[0][name]}`;
+    const Users = `assets/photographers/${portrait}`;
 
     console.log(Users);
 
