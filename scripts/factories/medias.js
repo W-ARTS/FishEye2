@@ -1,10 +1,9 @@
-//Mettre le code JavaScript lié à la page photographer.html
 
 function photographerFactory(data) {
     const { name, city, country, tagline, price, portrait } = data;
 
     const picture = `assets/photographers/${portrait}`;
-    console.log(data);
+    
     function getUserCardDOM() {
         const article = document.createElement('article');
         const img = document.createElement('img');
@@ -24,7 +23,7 @@ function photographerFactory(data) {
         article.appendChild(h4);
         article.appendChild(p);
         article.appendChild(p_2);
-
+        console.log(wael);
         return (article);
     }
     return { name, picture, city, country, tagline, price, getUserCardDOM }

@@ -9,16 +9,33 @@ async function getPhotographerMedias() {
         medias = data.media.filter(e => e.photographerId == id);
     } else {
         alert("HTTP-Error: " + response.status);
-    }
+    } 
     return medias;
+}
+
+async function getPhotographers() {
+    // Ceci est un exemple de données pour avoir un affichage de photographes de test dès le démarrage du projet, 
+    let photographers = []
+    let response = await fetch('/data/photographers.json');
+
+    if (response.ok) {
+        let data = await response.json();
+        photographers = data.photographers;
+    } else {
+        alert("HTTP-Error: " + response.status);
+    }
+    return ({
+        photographers: [...photographers]
+    })
 }
 
 async function displayData(medias) {
     const photographersSection = document.querySelector(".cards-media-container");
+    console.log(medias);
     medias.forEach((medias) => {
         const photographerModel = photographerFactory(medias);
-        const userCardDOM = photographerModel.getUserCardDOM();
-        photographersSection.appendChild(userCardDOM);
+        const userCardDOM = photographerModel.makeUserCard();
+        photographersSection.appendChild(makeUserCard);
     });
 };
 
@@ -29,3 +46,5 @@ async function init() {
 };
 
 init();
+
+
