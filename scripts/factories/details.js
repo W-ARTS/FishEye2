@@ -1,4 +1,33 @@
-//faire appels a l'API
+async function getPhotographerMedias() {
+    let urlParams = new URLSearchParams(location.search);
+    let id = urlParams.get('id');
+    let medias = []
+    let response = await fetch('/data/photographers.json');
+
+    if (response.ok) {
+        let data = await response.json();
+        medias = data.media.filter(e => e.photographerId == id);
+    } else {
+        alert("HTTP-Error: " + response.status);
+    }
+    return medias;
+}
+
+async function getPhotographers() {
+    let photographers = []
+    let response = await fetch('/data/photographers.json');
+
+    if (response.ok) {
+        let data = await response.json();
+        photographers = data.photographers;
+    } else {
+        alert("HTTP-Error: " + response.status);
+    }
+    return ({
+        photographers: [...photographers]
+    })
+}
+
 function GetApi() {
     const url = "/data/photographers.json";
 
@@ -15,7 +44,7 @@ function GetApi() {
                 console.log(response);
                 const imageData = data.image;
                 const imageElement = new Image();
-                imageElement.src = `/data/photographers.json,${media}`;
+                img.setAttribute("src", imageData);
                 document.body.appendChild(imageElement);
 
             }
