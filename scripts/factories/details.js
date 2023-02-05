@@ -1,3 +1,12 @@
+fetch('/data/photographers.json')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+
 async function getPhotographerMedias() {
     let urlParams = new URLSearchParams(location.search);
     let id = urlParams.get('id');
@@ -13,47 +22,16 @@ async function getPhotographerMedias() {
     return medias;
 }
 
-async function getPhotographers() {
-    let photographers = []
-    let response = await fetch('/data/photographers.json');
+function photographerImg(data) {
+    const { image } = data;
+    const img = `/assets/Sample Photos/Tracy/${image}`;
 
-    if (response.ok) {
-        let data = await response.json();
-        photographers = data.photographers;
-    } else {
-        alert("HTTP-Error: " + response.status);
-    }
-    return ({
-        photographers: [...photographers]
-    })
+        const picture = document.createElement('img');
+        picture.setAttribute("src", img)
+        const cards = document.getElementsByClassName('cards-media-container')[0];
+        cards.appendChild(picture);
+        console.log(picture);
 }
 
-function GetApi() {
-    const url = "/data/photographers.json";
-
-    let requete = new XMLHttpRequest();
-    requete.open('GET', url);
-    requete.responseType = 'json';
-    requete.send();
-
-    requete.onload = function (data) {
-        if (requete.readyState === XMLHttpRequest.DONE) {
-            if (requete.status === 200) {
-                let response = requete.response;
-
-                console.log(response);
-                const imageData = data.image;
-                const imageElement = new Image();
-                img.setAttribute("src", picture);
-                document.body.appendChild(imageElement);
-
-            }
-            else {
-                alerte('Un probleme est intervenu, merci de revenir plus tard.')
-            }
-        }
-
-    } 
-}
-
+photographerImg({ image: "Fashion_Urban_Jungle.jpg" });
 getPhotographerMedias();
