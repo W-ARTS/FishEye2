@@ -29,12 +29,31 @@ async function getPhotographers() {
 }
 
 function GetApi() {
-    const img = document.querySelector('.cards-media-container');
+    const url = "/data/photographers.json";
 
-    fetch('/data/photographers.json')
-        .then(res => res.json())
-        .then(data => img.src = data[0].url)
-    
+    let requete = new XMLHttpRequest();
+    requete.open('GET', url);
+    requete.responseType = 'json';
+    requete.send();
+
+    requete.onload = function (data) {
+        if (requete.readyState === XMLHttpRequest.DONE) {
+            if (requete.status === 200) {
+                let response = requete.response;
+
+                console.log(response);
+                const imageData = data.image;
+                const imageElement = new Image();
+                img.setAttribute("src", picture);
+                document.body.appendChild(imageElement);
+
+            }
+            else {
+                alerte('Un probleme est intervenu, merci de revenir plus tard.')
+            }
+        }
+
+    } 
 }
 
 getPhotographerMedias();
