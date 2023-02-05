@@ -13,6 +13,10 @@ function GetApi() {
                 let response = requete.response;
 
                 console.log(response);
+                const imageData = data.image;
+                const imageElement = new Image();
+                imageElement.src = `/data/photographers.json,${media}`;
+                document.body.appendChild(imageElement);
 
             }
             else {
