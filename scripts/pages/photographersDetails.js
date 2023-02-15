@@ -24,12 +24,4 @@ async function displayData(medias) {
     });
 };
 
-async function init() {
-    // Récupère les datas des photographes
-    const medias = await getPhotographerMedias();
-    displayData(medias);
-};
-
-init();
-
 
