@@ -9,7 +9,7 @@ fetch('/data/photographers.json')
 
 function photographerImg(data) {
     const { image } = data;
-    const img = `/assets/Sample Photos/Tracy/${image}`;
+    const img = `/assets/Sample Photos/Mimi/${image}`;
 
         const picture = document.createElement('img');
         picture.setAttribute("src", img)
@@ -18,5 +18,6 @@ function photographerImg(data) {
         console.log(picture);
 }
 
-photographerImg({ image: "Fashion_Urban_Jungle.jpg" });
-getPhotographerMedias();
+photographerImg({
+    image: "Travel_Lonesome.jpg"
+});
