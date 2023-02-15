@@ -1,18 +1,3 @@
-async function getPhotographerMedias() {
-    let urlParams = new URLSearchParams(location.search);
-    let id = urlParams.get('id');
-    let medias = []
-    let response = await fetch('/data/photographers.json');
-
-    if (response.ok) {
-        let data = await response.json();
-        medias = data.media.filter(e => e.photographerId == id);
-    } else {
-        alert("HTTP-Error: " + response.status);
-    } 
-    return medias;
-}
-
 async function getPhotographers() {
     // Ceci est un exemple de données pour avoir un affichage de photographes de test dès le démarrage du projet, 
     let photographers = []

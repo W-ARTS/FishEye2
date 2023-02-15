@@ -13,6 +13,10 @@ header {
     height: 90px;
 }
 
+.index_title{
+    color: #D3573C;
+}
+
 h1 {
     color: #901C1C;
     margin-right: 100px;
