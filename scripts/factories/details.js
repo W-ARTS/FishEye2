@@ -7,21 +7,6 @@ fetch('/data/photographers.json')
         console.error('There was a problem with the fetch operation:', error);
     });
 
-async function getPhotographerMedias() {
-    let urlParams = new URLSearchParams(location.search);
-    let id = urlParams.get('id');
-    let medias = []
-    let response = await fetch('/data/photographers.json');
-
-    if (response.ok) {
-        let data = await response.json();
-        medias = data.media.filter(e => e.photographerId == id);
-    } else {
-        alert("HTTP-Error: " + response.status);
-    }
-    return medias;
-}
-
 function photographerImg(data) {
     const { image } = data;
     const img = `/assets/Sample Photos/Tracy/${image}`;
