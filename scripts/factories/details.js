@@ -20,7 +20,7 @@ async function displayData(photographers) {
     photographers.forEach((photographer) => {
         const photographerModel = userFactory(photographer);
         const userCardMedias = photographerModel.getMedias();
-        photographersSection.appendChild(userCardDOM);
+        userMedias.appendChild(userCardMedias);
     });
 };
 
@@ -34,25 +34,17 @@ getPhotographers();
 init();
 
 function userFactory(data) {
-    const { name, city, country, tagline, price, portrait } = data;
+    const { id, photographerId, title, image, likes, date, price } = data;
 
-    const picture = `assets/photographers/${portrait}`;
+    const media = `/assets/Sample Photos/Mimi/${image}`;
 
     function getMedias() {
-        const article = document.createElement('article');
         const img = document.createElement('img');
-        article.classList.add('article_1');
-        prix.innerHTML = " €/jours";
-        h4.textContent = city + "," + country;
-        p.textContent = tagline;
-        p_2.textContent = price + prix.textContent;
-        img.setAttribute("src", picture)
-        const h2 = document.createElement('h2');
-        h2.textContent = name;
-        article.appendChild(img);
+        img.setAttribute("src", media);
+        
        
 
-        return (article);
+        return (img);
     }
-    return { name, picture, city, country, tagline, price, getUserCardDOM }
+    return { id, photographerId, title, image, likes, date, price, getMedias }
 }
