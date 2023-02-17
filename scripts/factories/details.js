@@ -15,7 +15,8 @@ function photographerImg(data) {
         picture.setAttribute("src", img)
         const cards = document.getElementsByClassName('cards-media-container')[0];
         cards.appendChild(picture);
-        console.log(picture);
+        picture.classList.add('picture_1');
+
 }
 
 photographerImg({

@@ -10,6 +10,7 @@ function photographerFactory(data) {
         const p = document.createElement( 'p' );
         const p_2 = document.createElement('p');
         const prix = document.createElement('p');
+        article.classList.add('article_1');
         prix.innerHTML = " €/jours";
         h4.textContent = city+","+country;
         p.textContent = tagline;

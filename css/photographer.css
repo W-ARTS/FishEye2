@@ -31,6 +31,11 @@
     margin: auto;
 }
 
+.picture_1{
+    width: 18%;
+    border-radius: 8px;
+}
+
 .modal header {
     justify-content: space-between;
     width: 100%;
