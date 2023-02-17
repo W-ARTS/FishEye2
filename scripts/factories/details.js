@@ -41,10 +41,6 @@ function userFactory(data) {
     function getMedias() {
         const article = document.createElement('article');
         const img = document.createElement('img');
-        const h4 = document.createElement('h4');
-        const p = document.createElement('p');
-        const p_2 = document.createElement('p');
-        const prix = document.createElement('p');
         article.classList.add('article_1');
         prix.innerHTML = " €/jours";
         h4.textContent = city + "," + country;
@@ -54,10 +50,7 @@ function userFactory(data) {
         const h2 = document.createElement('h2');
         h2.textContent = name;
         article.appendChild(img);
-        article.appendChild(h2);
-        article.appendChild(h4);
-        article.appendChild(p);
-        article.appendChild(p_2);
+       
 
         return (article);
     }
