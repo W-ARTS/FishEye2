@@ -1,11 +1,10 @@
 async function getPhotographers() {
-    // Ceci est un exemple de données pour avoir un affichage de photographes de test dès le démarrage du projet, 
     let photographers = []
     let response = await fetch('/data/photographers.json');
 
     if (response.ok) {
         let data = await response.json();
-        photographers = data.photographers;
+        photographers = data.media;
     } else {
         alert("HTTP-Error: " + response.status);
     }
@@ -41,8 +40,8 @@ function userFactory(data) {
     function getMedias() {
         const img = document.createElement('img');
         img.setAttribute("src", media);
-        
-       
+
+
 
         return (img);
     }
