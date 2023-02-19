@@ -7,7 +7,7 @@ async function getPhotographers() {
         photographers = data.media;
     } else {
         alert("HTTP-Error: " + response.status);
-    }
+    } console.log(photographers);
     return ({
         photographers: [...photographers]
     })
@@ -35,11 +35,11 @@ init();
 function userFactory(data) {
     const { id, photographerId, title, image, likes, date, price } = data;
 
-    const media = `/assets/SamplePhotos/Mimi/${image}`;
+    const medias = `/assets/SamplePhotos/Mimi/${image}`;
 
     function getMedias() {
         const img = document.createElement('img');
-        img.setAttribute("src", media);
+        img.setAttribute("src", medias);
 
 
 

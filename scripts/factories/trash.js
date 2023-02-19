@@ -22,3 +22,4 @@ function photographerImg(data) {
 photographerImg({
     image: "Travel_Lonesome.jpg"
 });
+
