@@ -13,23 +13,31 @@ async function getPhotographers() {
     })
 }
 
-async function displayData(photographers) {
+async function displayPhotographer(photographers, userId) {
     const userMedias = document.querySelector(".cards-media-container");
 
+    let photographer = null //find(); 
+    let mediaPhotgrapher =  null //find();
     photographers.forEach((photographer) => {
         const photographerModel = userFactory(photographer);
-        const userCardMedias = photographerModel.getMedias();
         userMedias.appendChild(userCardMedias);
     });
 };
 
+function getUserId() {
+    //to do it § recuperer les id du l'user get 
+    return 243;
+}
+
 async function init() {
     // Récupère les datas des photographes
+    let userId = getUserId();
     const { photographers } = await getPhotographers();
-    displayData(photographers);
+    displayPhotographer(photographers, userId);
+    
 };
 
-getPhotographers();
+//getPhotographers();
 init();
 
 function userFactory(data) {
